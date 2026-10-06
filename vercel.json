@@ -1,6 +1,6 @@
 {
-  "cleanUrls": true,
   "rewrites": [
+    { "source": "/v", "destination": "/v.html" },
     { "source": "/f/:name", "destination": "/api/file?name=:name" }
   ],
   "headers": [

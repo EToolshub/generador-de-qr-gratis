@@ -29,12 +29,12 @@ Generador de códigos QR **gratis, sin registro y sin marca de agua**. Hecho por
 | `api/_lib/files.js` | Lógica compartida de las dos funciones |
 | `v.html`, `v.js` | Visor que se abre al escanear un QR de imagen |
 | `tests/` | Pruebas de las funciones (`npm test`) |
-| `robots.txt`, `sitemap.xml` | Para que Google indexe la web (los archivos subidos quedan fuera) |
+| `robots.txt`, `sitemap.xml`, `google293f06e74ff88d87.html` | Para Google: rastreo, mapa del sitio y verificación de Search Console |
 | `og-qr.png`, `og-qr-en.png` | Imagen que aparece al compartir el enlace en WhatsApp o redes |
 | `assets/icons.svg` | Iconos de la interfaz ([Lucide](https://lucide.dev), ISC) y logotipos de marca ([Simple Icons](https://simpleicons.org), CC0) |
 | `assets/logos/` | Logos para el centro del QR (los genéricos usan `#0b0b0c`, que la web cambia por el color del código) |
 | `assets/ejemplos/` | Ejemplos de la galería, generados con la propia herramienta (apuntan a esta web) |
-| `vercel.json` | Rutas limpias, reescritura de `/f/<id>`, caché y cabeceras |
+| `vercel.json` | Reescrituras de `/v` y `/f/<id>`, caché y cabeceras |
 
 ## Desarrollo
 ```bash
@@ -49,9 +49,13 @@ Al cambiar `qr.css` o `main.js`, actualiza el `?v=` en `index.html` para que los
 Proyecto de Vercel `generador-de-qr-gratis`, conectado a este repositorio: cada cambio en `main` se publica solo. La variable `BLOB_READ_WRITE_TOKEN` la añade Vercel al conectar el almacén Blob.
 
 ## Google
-1. En [Google Search Console](https://search.google.com/search-console) añade la propiedad `https://generador-de-qr-gratis.vercel.app/` (tipo «Prefijo de URL») y verifícala con la etiqueta HTML o el archivo que te dé Google.
+- `google293f06e74ff88d87.html` es el archivo de verificación de Search Console. Tiene que estar en la raíz y responder sin redirecciones: por eso `vercel.json` no usa `cleanUrls` (quitaría el `.html` con una redirección) y el visor `/v` se sirve con una reescritura. No lo borres ni lo renombres.
+- `sitemap.xml` lista la página en español y la inglesa con sus alternativas `hreflang`; `robots.txt` lo anuncia y deja fuera el visor, los archivos subidos y la API.
+
+Pasos en [Google Search Console](https://search.google.com/search-console):
+1. Añade la propiedad `https://generador-de-qr-gratis.vercel.app/` (tipo «Prefijo de URL»), elige «Archivo HTML» y pulsa «Verificar».
 2. En «Sitemaps», envía `sitemap.xml`.
-3. En «Inspección de URLs», pide la indexación de la página principal.
+3. En «Inspección de URLs», pide la indexación de `/` y de `/en/`.
 
 ## Créditos
 - Motor de QR: [qr-code-styling](https://github.com/kozakdenys/qr-code-styling) 1.9.2 (MIT).
