@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free QR Code Generator: make a QR code with no sign-up</title>
+<meta name="description" content="Make free QR codes for links, images, PDFs, WiFi, WhatsApp, social media and more. No sign-up, no watermark, and they never expire.">
+<meta name="theme-color" content="#0b0b0c">
+<link rel="canonical" href="https://generador-de-qr-gratis.vercel.app/en/">
+<link rel="alternate" hreflang="es" href="https://generador-de-qr-gratis.vercel.app/">
+<link rel="alternate" hreflang="en" href="https://generador-de-qr-gratis.vercel.app/en/">
+<link rel="alternate" hreflang="x-default" href="https://generador-de-qr-gratis.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:site_name" content="QR Gratis">
+<meta property="og:title" content="Free QR Code Generator: make a QR code with no sign-up">
+<meta property="og:description" content="Links, images, PDFs, WiFi, WhatsApp, social media and more. Free, no sign-up, no watermark, and no expiry.">
+<meta property="og:url" content="https://generador-de-qr-gratis.vercel.app/en/">
+<meta property="og:image" content="https://generador-de-qr-gratis.vercel.app/og-qr-en.png">
+<meta property="og:image:alt" content="Free QR code generator">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/qr.css?v=20261006c">
+<!-- TODO cookies: when you turn on AdSense, add the cookie consent banner (CMP) here. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free QR Code Generator",
+  "alternateName": "QR Gratis",
+  "url": "https://generador-de-qr-gratis.vercel.app/en/",
+  "description": "Make free QR codes for links, images, PDFs, WiFi, WhatsApp, social media, contacts, locations and events. No sign-up, no watermark, and no expiry.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (web browser)",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "creator": { "@type": "Organization", "name": "Pixolve Agency", "url": "https://pixolve-agency.vercel.app/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Is it really free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. No sign-up, no limit on how many codes you make, no watermark and no trial period. You can use your QR codes for your business too." } },
+    { "@type": "Question", "name": "Do the QR codes expire?", "acceptedAnswer": { "@type": "Answer", "text": "No. Link, WiFi, WhatsApp, text, contact and the other types carry the information inside the code itself, so they work forever, even if this website disappeared. Image and PDF codes open your file, which we keep with no expiry date." } },
+    { "@type": "Question", "name": "How do I make a QR code for an image or a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Choose Image or PDF and upload your file (up to 4 MB; photos are optimized automatically). We store it and the QR code opens it when scanned. Anyone with the code can see it, so don't upload private documents." } },
+    { "@type": "Question", "name": "Can I change the content after printing the QR code?", "acceptedAnswer": { "@type": "Answer", "text": "No: the content is baked into the code, which is exactly why it never expires. If you think the destination will change, point the code to a page of yours that you can update, like your website or your profile." } },
+    { "@type": "Question", "name": "How big should I print it?", "acceptedAnswer": { "@type": "Answer", "text": "At least 2 × 2 cm (0.8 in) for close-up scanning. For posters, divide the scanning distance by 10: at 2 meters (6.5 ft), about 20 cm (8 in). Below the download button we show the minimum size for your code." } },
+    { "@type": "Question", "name": "PNG or SVG?", "acceptedAnswer": { "@type": "Answer", "text": "PNG for WhatsApp, social media and documents. SVG for print shops, vinyl and design apps: it's a vector file, so it stays sharp at any size." } },
+    { "@type": "Question", "name": "Do you store what I type or my WiFi password?", "acceptedAnswer": { "@type": "Answer", "text": "No. The QR code is made in your own browser and nothing you type is sent to a server. The only files we store are the ones you upload under Image or PDF." } },
+    { "@type": "Question", "name": "Can I add my logo and a frame with text?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Upload your logo or pick WhatsApp, Instagram and other network logos, and add a frame with text like “Scan me” or “View menu”. With a logo we raise error correction to the maximum so the code still scans." } }
+  ]
+}
+</script>
+<script defer src="/lib/vendor/qr-code-styling.js?v=20261006"></script>
+<script defer src="/main.js?v=20261006c"></script>
+</head>
+<body>
+<a class="skip-link" href="#herramienta">Skip to the generator</a>
+<header class="top">
+  <div class="top-inner shell">
+    <a class="brand" href="/en/" aria-label="QR Gratis, home"><span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h8v8H3zM5 5v4h4V5zM13 3h8v8h-8zm2 2v4h4V5zM3 13h8v8H3zm2 2v4h4v-4zM13 13h3v3h-3zM18 13h3v3h-3zM13 18h3v3h-3zM18 18h3v3h-3zM6 6h2v2H6zM16 6h2v2h-2zM6 16h2v2H6z"/></svg></span><span>QR Gratis</span></a>
+    <nav class="top-nav" aria-label="Navigation">
+      <a href="#examples">Examples</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#faq">FAQ</a>
+      <span class="lang" aria-label="Language"><a href="/" hreflang="es" lang="es">ES</a><b aria-current="true">EN</b></span>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="intro shell">
+    <h1>Free QR code generator</h1>
+    <p class="lead">Make a QR code for your website, your PDF menu, your WiFi or your WhatsApp. Download it right away and it works forever.</p>
+    <ul class="trust">
+      <li><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-infinity"/></svg>Never expires</li>
+      <li><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-user-round-x"/></svg>No sign-up</li>
+      <li><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-badge-check"/></svg>No watermark</li>
+    </ul>
+  </section>
+
+  <section class="tool shell" id="herramienta" aria-label="QR code generator">
+    <div class="tool-card" id="tool-card" data-state="empty">
+
+      <!-- 1 · CONTENT -->
+      <div class="panel panel-content">
+        <h2 class="step"><span class="step-num">1</span> What do you want to share?</h2>
+        <fieldset class="types">
+          <legend class="sr-only">QR code type</legend>
+          <label class="type-opt"><input type="radio" name="type" value="url" checked><span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-link"/></svg>Link</span></label>
+          <label class="type-opt"><input type="radio" name="type" value="image"><span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-image"/></svg>Image</span></label>
+          <label class="type-opt"><input type="radio" name="type" value="pdf"><span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-file-text"/></svg>PDF</span></label>
+          <label class="type-opt"><input type="radio" name="type" value="wifi"><span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-wifi"/></svg>WiFi</span></label>
+          <label class="type-opt"><input type="radio" name="type" value="whatsapp"><span><svg class="ic ic-wa" aria-hidden="true"><use href="/assets/icons.svg?v=1#b-whatsapp"/></svg>WhatsApp</span></label>
+          <label class="type-opt"><input type="radio" name="type" value="social"><span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-at-sign"/></svg>Social</span></label>
+          <label class="type-opt"><input type="radio" name="type" value="vcard"><span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-contact"/></svg>Contact</span></label>
+          <label class="type-opt"><input type="radio" name="type" value="location"><span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-map-pin"/></svg>Location</span></label>
+          <label class="type-opt"><input type="radio" name="type" value="phone"><span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-phone"/></svg>Phone</span></label>
+          <label class="type-opt"><input type="radio" name="type" value="sms"><span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-message-square-text"/></svg>SMS</span></label>
+          <label class="type-opt"><input type="radio" name="type" value="email"><span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-mail"/></svg>Email</span></label>
+          <label class="type-opt"><input type="radio" name="type" value="event"><span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-calendar-days"/></svg>Event</span></label>
+          <label class="type-opt"><input type="radio" name="type" value="text"><span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-type"/></svg>Text</span></label>
+        </fieldset>
+
+        <div class="fields" data-fields="url">
+          <label class="field">Link or website
+            <input id="f-url" type="text" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false" placeholder="your-site.com or https://…" data-watch>
+          </label>
+          <p class="hint">Your website, your online store, a YouTube video, a Google review page… any link works.</p>
+        </div>
+
+        <div class="fields" data-fields="image" hidden>
+          <label class="drop" data-drop="image">
+            <input type="file" accept="image/*" data-file="image" class="sr-only">
+            <svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-image-up"/></svg>
+            <b>Choose, drop or paste an image</b>
+            <small>JPG, PNG, WebP or GIF. Heavy photos get optimized for you.</small>
+          </label>
+          <div class="upload" data-upload="image" hidden>
+            <span class="up-thumb"></span>
+            <div class="up-info"><b class="up-name"></b><small class="up-status"></small><span class="up-bar"><span></span></span></div>
+            <div class="up-actions"><button type="button" class="mini-btn" data-change="image">Replace</button><button type="button" class="mini-btn" data-copy-link="image" hidden>Copy link</button></div>
+          </div>
+          <p class="hint">We store the image so whoever scans the code can see it. Anyone with the QR code can open it, so don't upload private photos.</p>
+        </div>
+
+        <div class="fields" data-fields="pdf" hidden>
+          <label class="drop" data-drop="pdf">
+            <input type="file" accept="application/pdf,.pdf" data-file="pdf" class="sr-only">
+            <svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-file-up"/></svg>
+            <b>Choose or drop a PDF</b>
+            <small>Menus, catalogs, brochures… up to 4 MB.</small>
+          </label>
+          <div class="upload" data-upload="pdf" hidden>
+            <span class="up-thumb up-pdf"><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-file-text"/></svg></span>
+            <div class="up-info"><b class="up-name"></b><small class="up-status"></small><span class="up-bar"><span></span></span></div>
+            <div class="up-actions"><button type="button" class="mini-btn" data-change="pdf">Replace</button><button type="button" class="mini-btn" data-copy-link="pdf" hidden>Copy link</button></div>
+          </div>
+          <p class="hint">We store the PDF and the QR code opens it when scanned. Anyone with the code can see it, so don't upload private documents.</p>
+        </div>
+
+        <div class="fields" data-fields="wifi" hidden>
+          <label class="field">Network name (SSID)
+            <input id="f-ssid" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="MyHomeWiFi" data-watch>
+          </label>
+          <label class="field">Password
+            <span class="input-with-btn">
+              <input id="f-pass" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Exactly as it is, case-sensitive" data-watch>
+              <button type="button" class="input-btn" id="toggle-pass" aria-pressed="false" data-show="Show" data-hide="Hide">Show</button>
+            </span>
+          </label>
+          <div class="field-row">
+            <label class="field">Security
+              <select id="f-sec" data-watch>
+                <option value="WPA" selected>WPA / WPA2 / WPA3 (most common)</option>
+                <option value="WEP">WEP (old)</option>
+                <option value="nopass">No password</option>
+              </select>
+            </label>
+            <label class="check"><input id="f-hidden" type="checkbox" data-watch> Hidden network</label>
+          </div>
+          <p class="hint">When scanned, the phone joins the network without typing the password. The password never leaves your device.</p>
+        </div>
+
+        <div class="fields" data-fields="whatsapp" hidden>
+          <label class="field">WhatsApp number (with country code)
+            <input id="f-wa" type="tel" inputmode="tel" autocomplete="tel" placeholder="1 555 123 4567" data-watch>
+          </label>
+          <label class="field">Opening message <span class="opt">(optional)</span>
+            <textarea id="f-wa-msg" rows="2" maxlength="500" placeholder="Hi, I'd like more information" data-watch></textarea>
+          </label>
+          <p class="hint">Type the country code without the “+”: 1 US &amp; Canada, 44 UK, 61 Australia, 52 Mexico, 34 Spain, 58 Venezuela.</p>
+        </div>
+
+        <div class="fields" data-fields="social" hidden>
+          <div class="field-row">
+            <label class="field">Social network
+              <select id="f-net" data-watch>
+                <option value="instagram" selected>Instagram</option>
+                <option value="tiktok">TikTok</option>
+                <option value="facebook">Facebook</option>
+                <option value="youtube">YouTube</option>
+                <option value="x">X (Twitter)</option>
+                <option value="telegram">Telegram</option>
+                <option value="linkedin">LinkedIn</option>
+                <option value="threads">Threads</option>
+              </select>
+            </label>
+            <label class="field">Username or link
+              <input id="f-user" type="text" autocapitalize="off" spellcheck="false" placeholder="@yourbusiness" data-watch>
+            </label>
+          </div>
+          <p class="hint">Type your username, with or without the @, and the QR code will open your profile.</p>
+        </div>
+
+        <div class="fields" data-fields="vcard" hidden>
+          <label class="field">Full name
+            <input id="f-vc-name" type="text" autocomplete="name" placeholder="Jane Smith" data-watch>
+          </label>
+          <div class="field-row">
+            <label class="field">Phone
+              <input id="f-vc-tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="+1 555 123 4567" data-watch>
+            </label>
+            <label class="field">Email
+              <input id="f-vc-mail" type="email" inputmode="email" autocomplete="email" autocapitalize="off" placeholder="jane@company.com" data-watch>
+            </label>
+          </div>
+          <div class="field-row">
+            <label class="field">Company <span class="opt">(optional)</span>
+              <input id="f-vc-org" type="text" autocomplete="organization" data-watch>
+            </label>
+            <label class="field">Website <span class="opt">(optional)</span>
+              <input id="f-vc-web" type="text" inputmode="url" autocapitalize="off" spellcheck="false" data-watch>
+            </label>
+          </div>
+          <p class="hint">When scanned, the phone offers to save the contact. Great for business cards.</p>
+        </div>
+
+        <div class="fields" data-fields="location" hidden>
+          <label class="field">Address, place or coordinates
+            <input id="f-loc" type="text" autocomplete="street-address" placeholder="Times Square, New York · or 40.758, -73.9855" data-watch>
+          </label>
+          <p class="hint">When scanned, Google Maps opens at that location. You can also paste a Maps link.</p>
+        </div>
+
+        <div class="fields" data-fields="phone" hidden>
+          <label class="field">Phone number
+            <input id="f-tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="+1 555 123 4567" data-watch>
+          </label>
+          <p class="hint">When scanned, the phone dials the number. Add “+” and the country code if people may call from abroad.</p>
+        </div>
+
+        <div class="fields" data-fields="sms" hidden>
+          <label class="field">Phone number
+            <input id="f-sms" type="tel" inputmode="tel" autocomplete="tel" placeholder="+1 555 123 4567" data-watch>
+          </label>
+          <label class="field">Message <span class="opt">(optional)</span>
+            <textarea id="f-sms-msg" rows="2" maxlength="300" placeholder="Count me in" data-watch></textarea>
+          </label>
+          <p class="hint">When scanned, a text message opens ready to send.</p>
+        </div>
+
+        <div class="fields" data-fields="email" hidden>
+          <label class="field">Recipient email
+            <input id="f-mail" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" placeholder="hello@yourbusiness.com" data-watch>
+          </label>
+          <label class="field">Subject <span class="opt">(optional)</span>
+            <input id="f-mail-sub" type="text" placeholder="Question" data-watch>
+          </label>
+          <label class="field">Message <span class="opt">(optional)</span>
+            <textarea id="f-mail-body" rows="2" maxlength="500" data-watch></textarea>
+          </label>
+        </div>
+
+        <div class="fields" data-fields="event" hidden>
+          <label class="field">Event name
+            <input id="f-ev-title" type="text" placeholder="Store grand opening" data-watch>
+          </label>
+          <div class="field-row">
+            <label class="field">Starts
+              <input id="f-ev-start" type="datetime-local" data-watch>
+            </label>
+            <label class="field">Ends <span class="opt">(optional)</span>
+              <input id="f-ev-end" type="datetime-local" data-watch>
+            </label>
+          </div>
+          <label class="field">Place <span class="opt">(optional)</span>
+            <input id="f-ev-loc" type="text" placeholder="123 Main St" data-watch>
+          </label>
+          <label class="field">Description <span class="opt">(optional)</span>
+            <textarea id="f-ev-desc" rows="2" maxlength="400" data-watch></textarea>
+          </label>
+          <p class="hint">When scanned, the phone offers to add the event to its calendar.</p>
+        </div>
+
+        <div class="fields" data-fields="text" hidden>
+          <label class="field">Text
+            <textarea id="f-text" rows="4" maxlength="1200" placeholder="Type any message, code or instructions" data-watch></textarea>
+          </label>
+          <p class="hint"><span id="text-count">0</span> / 1200 characters. The shorter it is, the easier it scans.</p>
+        </div>
+      </div>
+
+      <!-- YOUR QR · PREVIEW + DOWNLOAD -->
+      <div class="panel panel-preview">
+        <div class="preview-sticky">
+        <div class="preview-frame" id="preview-frame">
+          <div class="qr-box" id="qr-box" role="img" aria-label="QR code preview"><canvas id="qr-canvas" width="800" height="800"></canvas></div>
+          <div class="preview-empty" aria-hidden="true">
+            <svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-scan-qr-code"/></svg>
+            <span id="empty-msg">Type your link and your QR code will show up here</span>
+          </div>
+          <p class="preview-error" id="preview-error" role="alert"></p>
+        </div>
+
+        <div class="downloads">
+          <fieldset class="sizes">
+            <legend>PNG size</legend>
+            <label><input type="radio" name="size" value="512"><span>Small<small>512 px</small></span></label>
+            <label><input type="radio" name="size" value="1024" checked><span>Medium<small>1024 px</small></span></label>
+            <label><input type="radio" name="size" value="2048"><span>Large<small>2048 px</small></span></label>
+          </fieldset>
+          <button type="button" class="btn btn-primary btn-big" id="dl-png" data-dl="png" disabled>
+            <svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-download"/></svg>
+            Download PNG
+          </button>
+          <div class="dl-more">
+            <button type="button" class="btn btn-ghost" id="dl-svg" data-dl="svg" disabled>SVG for print</button>
+            <button type="button" class="btn btn-ghost" id="copy-img" disabled hidden><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-copy"/></svg>Copy</button>
+            <button type="button" class="btn btn-ghost" id="share-img" disabled hidden><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-share-2"/></svg>Share</button>
+          </div>
+          <p class="dl-hint" id="dl-hint">Test it with your phone camera before printing.</p>
+        </div>
+        </div>
+        <noscript><p class="noscript">This tool needs JavaScript turned on to make the QR code.</p></noscript>
+      </div>
+
+      <!-- 2 · DESIGN -->
+      <div class="panel panel-design">
+        <h2 class="step"><span class="step-num">2</span> Make it yours <span class="opt">(optional)</span></h2>
+
+        <fieldset class="opt-group">
+          <legend>Shape</legend>
+          <div class="styles">
+            <label class="style-opt"><input type="radio" name="style" value="clasico" checked><span><span class="style-prev" data-style-prev="clasico"></span>Classic</span></label>
+            <label class="style-opt"><input type="radio" name="style" value="redondeado"><span><span class="style-prev" data-style-prev="redondeado"></span>Rounded</span></label>
+            <label class="style-opt"><input type="radio" name="style" value="puntos"><span><span class="style-prev" data-style-prev="puntos"></span>Dots</span></label>
+            <label class="style-opt"><input type="radio" name="style" value="elegante"><span><span class="style-prev" data-style-prev="elegante"></span>Elegant</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="opt-group">
+          <legend>Color</legend>
+          <div class="swatches">
+            <label class="swatch" title="Black"><input type="radio" name="palette" value="#0b0b0c|#ffffff" checked><span style="--c:#0b0b0c"><span class="sr-only">Black</span></span></label>
+            <label class="swatch" title="Blue"><input type="radio" name="palette" value="#1d4ed8|#ffffff"><span style="--c:#1d4ed8"><span class="sr-only">Blue</span></span></label>
+            <label class="swatch" title="Indigo"><input type="radio" name="palette" value="#4338ca|#ffffff"><span style="--c:#4338ca"><span class="sr-only">Indigo</span></span></label>
+            <label class="swatch" title="Green"><input type="radio" name="palette" value="#166534|#ffffff"><span style="--c:#166534"><span class="sr-only">Green</span></span></label>
+            <label class="swatch" title="Red"><input type="radio" name="palette" value="#b91c1c|#ffffff"><span style="--c:#b91c1c"><span class="sr-only">Red</span></span></label>
+            <label class="swatch" title="Brown"><input type="radio" name="palette" value="#5b3a1e|#fbf6ee"><span style="--c:#5b3a1e"><span class="sr-only">Brown</span></span></label>
+          </div>
+          <div class="custom-colors">
+            <label class="color-field"><input type="color" id="c-fg" value="#0b0b0c"> Code</label>
+            <label class="color-field" id="bg-field"><input type="color" id="c-bg" value="#ffffff"> Background</label>
+            <label class="check check-sm"><input id="c-transparent" type="checkbox"> Transparent background</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="opt-group">
+          <legend>Frame with text</legend>
+          <div class="frames">
+            <label class="chip-opt"><input type="radio" name="frame" value="" checked><span>No frame</span></label>
+            <label class="chip-opt"><input type="radio" name="frame" value="SCAN ME"><span>Scan me</span></label>
+            <label class="chip-opt"><input type="radio" name="frame" value="VIEW MENU"><span>View menu</span></label>
+            <label class="chip-opt"><input type="radio" name="frame" value="FREE WIFI"><span>Free WiFi</span></label>
+            <label class="chip-opt"><input type="radio" name="frame" value="FOLLOW US"><span>Follow us</span></label>
+            <label class="chip-opt"><input type="radio" name="frame" value="custom"><span>Other text</span></label>
+          </div>
+          <label class="field field-inline" id="frame-custom" hidden>
+            <span class="sr-only">Frame text</span>
+            <input id="f-frame-text" type="text" maxlength="24" placeholder="Type your text (max. 24)">
+          </label>
+        </fieldset>
+
+        <fieldset class="opt-group">
+          <legend>Logo in the middle</legend>
+          <div class="logos">
+            <label class="logo-opt"><input type="radio" name="logo" value="" checked><span>None</span></label>
+            <label class="logo-opt" title="WhatsApp"><input type="radio" name="logo" value="whatsapp"><span><img src="/assets/logos/whatsapp.svg" alt="" width="28" height="28"><span class="sr-only">WhatsApp</span></span></label>
+            <label class="logo-opt" title="Instagram"><input type="radio" name="logo" value="instagram"><span><img src="/assets/logos/instagram.svg" alt="" width="28" height="28"><span class="sr-only">Instagram</span></span></label>
+            <label class="logo-opt" title="Facebook"><input type="radio" name="logo" value="facebook"><span><img src="/assets/logos/facebook.svg" alt="" width="28" height="28"><span class="sr-only">Facebook</span></span></label>
+            <label class="logo-opt" title="TikTok"><input type="radio" name="logo" value="tiktok"><span><img src="/assets/logos/tiktok.svg" alt="" width="28" height="28"><span class="sr-only">TikTok</span></span></label>
+            <label class="logo-opt" title="YouTube"><input type="radio" name="logo" value="youtube"><span><img src="/assets/logos/youtube.svg" alt="" width="28" height="28"><span class="sr-only">YouTube</span></span></label>
+            <label class="logo-opt" title="Telegram"><input type="radio" name="logo" value="telegram"><span><img src="/assets/logos/telegram.svg" alt="" width="28" height="28"><span class="sr-only">Telegram</span></span></label>
+            <label class="logo-opt" title="X"><input type="radio" name="logo" value="x"><span><img src="/assets/logos/x.svg" alt="" width="28" height="28"><span class="sr-only">X</span></span></label>
+            <label class="logo-opt" title="WiFi"><input type="radio" name="logo" value="wifi"><span><img src="/assets/logos/wifi.svg" alt="" width="28" height="28"><span class="sr-only">WiFi</span></span></label>
+            <label class="logo-opt" title="Location"><input type="radio" name="logo" value="map-pin"><span><img src="/assets/logos/map-pin.svg" alt="" width="28" height="28"><span class="sr-only">Location</span></span></label>
+            <label class="logo-opt" title="Restaurant"><input type="radio" name="logo" value="utensils"><span><img src="/assets/logos/utensils.svg" alt="" width="28" height="28"><span class="sr-only">Restaurant</span></span></label>
+            <label class="logo-opt" title="Shop"><input type="radio" name="logo" value="shopping-bag"><span><img src="/assets/logos/shopping-bag.svg" alt="" width="28" height="28"><span class="sr-only">Shop</span></span></label>
+            <label class="logo-opt logo-upload" id="logo-upload-label">
+              <input type="file" id="logo-file" accept="image/png,image/jpeg,image/webp,image/svg+xml" class="sr-only">
+              <span><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-image-up"/></svg><b id="logo-upload-text" data-upload="Upload yours" data-mine="Your logo" data-use="Use my logo">Upload yours</b></span>
+            </label>
+          </div>
+          <button type="button" class="link-btn" id="logo-clear" hidden>Remove my logo</button>
+        </fieldset>
+
+        <ul class="warnings" id="warnings" aria-live="polite"></ul>
+      </div>
+    </div>
+
+    <p class="privacy">
+      <svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-shield-check"/></svg>
+      <span>The QR code is made on your device: what you type is never sent to a server. We only store the files you upload under Image or PDF.</span>
+    </p>
+  </section>
+
+  <div class="ad-slot shell" hidden>
+    <!-- PASTE YOUR ADSENSE CODE HERE and remove the “hidden” attribute from this div -->
+  </div>
+
+  <section class="examples shell" id="examples">
+    <div class="sec-head">
+      <h2>Examples to get you started</h2>
+      <p>All made with this very generator. Pick one and add your own content.</p>
+    </div>
+    <div class="ex-grid">
+      <article class="ex-card">
+        <img src="/assets/ejemplos/en-menu.webp" width="480" height="545" alt="Brown QR code with a “View menu” frame and a cutlery icon" loading="lazy">
+        <h3>Restaurant menu</h3>
+        <p>Upload your menu as a PDF and put the code on every table.</p>
+        <button type="button" class="mini-btn" data-preset='{"type":"pdf","style":"redondeado","palette":"#5b3a1e|#fbf6ee","frame":"VIEW MENU","logo":"utensils"}'>Use this design</button>
+      </article>
+      <article class="ex-card">
+        <img src="/assets/ejemplos/en-wifi.webp" width="480" height="545" alt="Blue QR code with a “Free WiFi” frame and the WiFi icon" loading="lazy">
+        <h3>Guest WiFi</h3>
+        <p>Guests connect without you spelling out the password.</p>
+        <button type="button" class="mini-btn" data-preset='{"type":"wifi","style":"puntos","palette":"#1d4ed8|#ffffff","frame":"FREE WIFI","logo":"wifi"}'>Use this design</button>
+      </article>
+      <article class="ex-card">
+        <img src="/assets/ejemplos/en-instagram.webp" width="480" height="545" alt="Indigo QR code with a “Follow us” frame and the Instagram logo" loading="lazy">
+        <h3>Your Instagram</h3>
+        <p>On the shop window, the packaging or the receipt.</p>
+        <button type="button" class="mini-btn" data-preset='{"type":"social","style":"elegante","palette":"#4338ca|#ffffff","frame":"FOLLOW US","logo":"instagram"}'>Use this design</button>
+      </article>
+      <article class="ex-card">
+        <img src="/assets/ejemplos/en-whatsapp.webp" width="480" height="545" alt="Green QR code with a “Scan me” frame and the WhatsApp logo" loading="lazy">
+        <h3>WhatsApp orders</h3>
+        <p>With a message already typed so customers can order in seconds.</p>
+        <button type="button" class="mini-btn" data-preset='{"type":"whatsapp","style":"clasico","palette":"#166534|#ffffff","frame":"SCAN ME","logo":"whatsapp"}'>Use this design</button>
+      </article>
+    </div>
+  </section>
+
+  <section class="how shell" id="how-it-works">
+    <div class="sec-head"><h2>How it works</h2></div>
+    <ol class="how-grid">
+      <li><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-pencil-line"/></svg><h3>Type or upload your content</h3><p>A link, a photo, a PDF, your WiFi, your WhatsApp, your location… there are 13 types to choose from.</p></li>
+      <li><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-palette"/></svg><h3>Tweak the design</h3><p>Shape, colors, a frame with text and a logo. If something could stop it from scanning, we'll let you know.</p></li>
+      <li><svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-download"/></svg><h3>Download and test it</h3><p>PNG for sharing or SVG for print. Scan it with your phone before you print.</p></li>
+    </ol>
+  </section>
+
+  <section class="guide shell">
+    <article>
+      <h2>Why these QR codes never expire</h2>
+      <p>Plenty of “free” generators make <b>dynamic QR codes</b>: the code points to their server, which then redirects to your link. It works until the free trial ends, and then the code you already printed stops opening. It happens to menus, flyers and packaging more often than you'd think.</p>
+      <p>Here, link, WiFi, WhatsApp, social, contact, location, phone, SMS, email, event and text codes are <b>static</b>: the information is written into the code itself. Nothing sits in between, and they'd keep working even if this website went away.</p>
+      <p>With <b>images and PDFs</b> there's no other way: the file has to live somewhere. We store it with no expiry date and the code opens it directly, with no ads in between.</p>
+      <h2>Tips so it scans on the first try</h2>
+      <ul>
+        <li><b>Dark code on a light background.</b> Every camera reads that best. Inverted colors work on almost every phone, but not all of them.</li>
+        <li><b>Keep the margin.</b> The empty border around the code is part of the QR code: don't crop it or put text right against it.</li>
+        <li><b>Make it big enough.</b> At least 2 × 2 cm (0.8 in) up close; for posters, the scanning distance divided by 10.</li>
+        <li><b>Less content is better.</b> A short link means bigger squares and a code that scans faster.</li>
+        <li><b>Test before printing.</b> Especially if you added a logo, a frame or colors.</li>
+      </ul>
+    </article>
+  </section>
+
+  <div class="ad-slot shell" hidden>
+    <!-- PASTE YOUR ADSENSE CODE HERE and remove the “hidden” attribute from this div -->
+  </div>
+
+  <section class="faq shell" id="faq">
+    <div class="sec-head"><h2>Frequently asked questions</h2></div>
+    <div class="faq-list">
+      <details><summary>Is it really free?</summary><p>Yes. No sign-up, no limit on how many codes you make, no watermark and no trial period. You can use your QR codes for your business too.</p></details>
+      <details><summary>Do the QR codes expire?</summary><p>No. Link, WiFi, WhatsApp, text, contact and the other types carry the information inside the code itself, so they work forever, even if this website disappeared. Image and PDF codes open your file, which we keep with no expiry date.</p></details>
+      <details><summary>How do I make a QR code for an image or a PDF?</summary><p>Choose Image or PDF and upload your file (up to 4 MB; photos are optimized automatically). We store it and the QR code opens it when scanned. Anyone with the code can see it, so don't upload private documents.</p></details>
+      <details><summary>Can I change the content after printing the QR code?</summary><p>No: the content is baked into the code, which is exactly why it never expires. If you think the destination will change, point the code to a page of yours that you can update, like your website or your profile.</p></details>
+      <details><summary>How big should I print it?</summary><p>At least 2 × 2 cm (0.8 in) for close-up scanning. For posters, divide the scanning distance by 10: at 2 meters (6.5 ft), about 20 cm (8 in). Below the download button we show the minimum size for your code.</p></details>
+      <details><summary>PNG or SVG?</summary><p>PNG for WhatsApp, social media and documents. SVG for print shops, vinyl and design apps: it's a vector file, so it stays sharp at any size.</p></details>
+      <details><summary>Do you store what I type or my WiFi password?</summary><p>No. The QR code is made in your own browser and nothing you type is sent to a server. The only files we store are the ones you upload under Image or PDF.</p></details>
+      <details><summary>Can I add my logo and a frame with text?</summary><p>Yes. Upload your logo or pick WhatsApp, Instagram and other network logos, and add a frame with text like “Scan me” or “View menu”. With a logo we raise error correction to the maximum so the code still scans.</p></details>
+    </div>
+  </section>
+
+  <aside class="maker shell" aria-label="Who made this tool">
+    <p><b>Made by Pixolve Agency.</b> We design and build websites, online stores and tools for businesses.</p>
+    <a class="btn btn-ghost" href="https://pixolve-agency.vercel.app/">Meet Pixolve <svg class="ic" aria-hidden="true"><use href="/assets/icons.svg?v=1#i-external-link"/></svg></a>
+  </aside>
+</main>
+
+<footer class="foot">
+  <div class="shell foot-inner">
+    <a class="brand" href="/en/"><span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h8v8H3zM5 5v4h4V5zM13 3h8v8h-8zm2 2v4h4V5zM3 13h8v8H3zm2 2v4h4v-4zM13 13h3v3h-3zM18 13h3v3h-3zM13 18h3v3h-3zM18 18h3v3h-3zM6 6h2v2H6zM16 6h2v2h-2zM6 16h2v2H6z"/></svg></span><span>QR Gratis</span></a>
+    <nav aria-label="Footer"><a href="#herramienta">Make a QR code</a><a href="#examples">Examples</a><a href="#faq">FAQ</a><a href="/" hreflang="es" lang="es">Español</a></nav>
+    <small>© 2026 QR Gratis · Made by <a href="https://pixolve-agency.vercel.app/">Pixolve Agency</a>.</small>
+  </div>
+</footer>
+
+<div class="mini-bar" id="mini-bar" aria-hidden="true">
+  <div class="mini-thumb" id="mini-thumb"></div>
+  <div class="mini-copy"><b>Your QR code is ready</b><small id="mini-sub">PNG · 1024 px</small></div>
+  <button type="button" class="btn btn-primary" data-dl="png" tabindex="-1">Download</button>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

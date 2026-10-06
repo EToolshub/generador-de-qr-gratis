@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0b0b0c">
+<title>Imagen compartida | QR Gratis</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<style>
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0; background: #0b0b0c; color: #fff; display: flex; flex-direction: column;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  a { color: inherit; }
+  .stage { flex: 1; min-height: 0; display: grid; place-items: center; padding: 16px; }
+  .stage img { max-width: 100%; max-height: calc(100vh - 150px); max-height: calc(100dvh - 150px); object-fit: contain; border-radius: 10px; }
+  .state { color: #a8a8ad; font-size: 15px; text-align: center; padding: 0 24px; line-height: 1.5; }
+  .bar {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    padding: 14px 16px calc(14px + env(safe-area-inset-bottom)); border-top: 1px solid #222;
+  }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 18px;
+    border-radius: 14px; font-weight: 700; font-size: 14px; text-decoration: none;
+  }
+  .btn-light { background: #fff; color: #0b0b0c; }
+  .btn-light:hover { background: #6366f1; color: #fff; }
+  .made { font-size: 13px; color: #a8a8ad; text-decoration: none; }
+  .made b { color: #fff; }
+  .made:hover b { color: #a5b4fc; }
+  [hidden] { display: none !important; }
+</style>
+<script defer src="/v.js?v=20261006b"></script>
+</head>
+<body>
+  <main class="stage">
+    <p class="state" id="v-state">Cargando imagen…</p>
+    <img id="v-img" alt="Imagen compartida con un código QR" hidden>
+  </main>
+  <div class="bar">
+    <a class="btn btn-light" id="v-dl" href="/" hidden>Descargar imagen</a>
+    <a class="made" id="v-made" href="/">¿Quieres tu propio QR? <b>Créalo gratis →</b></a>
+  </div>
+  <noscript><p class="state">Activa JavaScript para ver la imagen.</p></noscript>
+</body>
+</html>
