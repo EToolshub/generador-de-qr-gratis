@@ -77,6 +77,9 @@ img { max-width: 100%; }
 .lang b { background: var(--black); color: #fff; }
 .lang a:hover { background: var(--soft); }
 
+/* Los saltos a secciones no quedan tapados por la cabecera fija. */
+section[id] { scroll-margin-top: 76px; }
+
 /* ---------- Intro ---------- */
 .intro { padding: 48px 0 28px; }
 .intro h1 {
@@ -118,8 +121,10 @@ legend { padding: 0; }
 
 /* Tipos */
 .types { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+/* Las opciones contienen su radio oculto: sin esto, en móvil los radios se salen de la fila con scroll y ensanchan la página. */
+.type-opt, .style-opt, .swatch, .logo-opt, .chip-opt, .sizes label { position: relative; }
 .type-opt input, .style-opt input, .swatch input, .logo-opt input[type="radio"], .chip-opt input, .sizes input {
-  position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none;
+  position: absolute; left: 0; top: 0; opacity: 0; width: 1px; height: 1px; pointer-events: none;
 }
 .type-opt span {
   display: inline-flex; align-items: center; gap: 7px; height: 40px; padding: 0 13px;
@@ -201,9 +206,10 @@ legend { padding: 0; }
   background: #fff; border: 1px solid var(--line); border-radius: 18px;
   display: grid; place-items: center; overflow: hidden;
 }
-.qr-box { width: 100%; height: 100%; padding: 6px; display: grid; place-items: center; transition: opacity .2s, filter .2s; }
-#qr-canvas { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; }
-.qr-box.is-transparent #qr-canvas { background: repeating-conic-gradient(#ececef 0% 25%, #fff 0% 50%) 50% / 20px 20px; }
+.qr-box { position: absolute; inset: 0; padding: 10px; transition: opacity .2s, filter .2s; }
+/* El canvas ocupa la caja y su contenido se ajusta sin recortarse (el QR con marco es más alto que ancho). */
+#qr-canvas { display: block; width: 100%; height: 100%; object-fit: contain; }
+.qr-box.is-transparent { background: repeating-conic-gradient(#ececef 0% 25%, #fff 0% 50%) 50% / 20px 20px; }
 .preview-empty, .preview-error {
   position: absolute; inset: 0; display: none; place-content: center; justify-items: center; gap: 12px;
   padding: 28px; text-align: center; font-size: 14px; color: var(--gray); line-height: 1.5;
