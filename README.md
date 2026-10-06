@@ -57,6 +57,9 @@ Pasos en [Google Search Console](https://search.google.com/search-console):
 2. En «Sitemaps», envía `sitemap.xml`.
 3. En «Inspección de URLs», pide la indexación de `/` y de `/en/`.
 
+## Analítica
+Vercel Web Analytics está en el `<head>` de `index.html` y `en/index.html` (dos líneas: `window.va` y `/_vercel/insights/script.js`). Cuenta visitas, países, dispositivos y de dónde llegan, sin cookies; no registra lo que se escribe en el generador. Los datos se ven en Vercel → proyecto → *Analytics* (hay que tenerla activada allí; si no, el script responde 404 y la web funciona igual).
+
 ## Créditos
 - Motor de QR: [qr-code-styling](https://github.com/kozakdenys/qr-code-styling) 1.9.2 (MIT).
 - Iconos: [Lucide](https://lucide.dev) (ISC). Logotipos de marca: [Simple Icons](https://simpleicons.org) (CC0); son marcas de sus dueños y se usan solo para identificar cada red.
