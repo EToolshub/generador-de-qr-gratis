@@ -50,12 +50,14 @@ Proyecto de Vercel `generador-de-qr-gratis`, conectado a este repositorio: cada 
 
 ## Google
 - `google293f06e74ff88d87.html` es el archivo de verificación de Search Console. Tiene que estar en la raíz y responder sin redirecciones: por eso `vercel.json` no usa `cleanUrls` (quitaría el `.html` con una redirección) y el visor `/v` se sirve con una reescritura. No lo borres ni lo renombres.
-- `sitemap.xml` lista la página en español y la inglesa con sus alternativas `hreflang`; `robots.txt` lo anuncia y deja fuera el visor, los archivos subidos y la API.
+- `sitemap.xml` lista la página en español y la inglesa con sus alternativas `hreflang`; `robots.txt` lo anuncia y deja fuera el visor, los archivos subidos y la API. `vercel.json` sirve el sitemap como `application/xml` y `robots.txt` como `text/plain`, de forma explícita.
 
 Pasos en [Google Search Console](https://search.google.com/search-console):
 1. Añade la propiedad `https://generador-de-qr-gratis.vercel.app/` (tipo «Prefijo de URL»), elige «Archivo HTML» y pulsa «Verificar».
 2. En «Sitemaps», envía `sitemap.xml`.
 3. En «Inspección de URLs», pide la indexación de `/` y de `/en/`.
+
+Si el sitemap aparece como «No se pudo obtener»: en una propiedad nueva suele significar «todavía no leído», no un error. Para comprobarlo, inspecciona la URL `https://generador-de-qr-gratis.vercel.app/sitemap.xml` y pulsa «Probar URL publicada». Si la obtención de la página sale «Correcta», el archivo está bien y solo hay que esperar (días; a veces un par de semanas). Si pasadas unas dos semanas sigue igual, envía una vez `sitemap.xml?v=2` (es el mismo archivo y no requiere publicar nada). No lo reenvíes una y otra vez.
 
 ## Analítica
 Vercel Web Analytics está en el `<head>` de `index.html` y `en/index.html` (dos líneas: `window.va` y `/_vercel/insights/script.js`). Cuenta visitas, países, dispositivos y de dónde llegan, sin cookies; no registra lo que se escribe en el generador. Los datos se ven en Vercel → proyecto → *Analytics* (hay que tenerla activada allí; si no, el script responde 404 y la web funciona igual).

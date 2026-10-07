@@ -1,6 +1,8 @@
 User-agent: *
 Allow: /
-Disallow: /v
+Disallow: /v$
+Disallow: /v?
+Disallow: /v.html
 Disallow: /f/
 Disallow: /api/
 
